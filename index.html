@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<title>𝑱𝑶𝑶𝑫 | Official Links</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+
+:root {
+    --gold: #d4af37;
+    --light-gold: #ffe9a0;
+    --black: #050505;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    min-height: 100%;
+    background: var(--black);
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 30px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    background:
+        radial-gradient(ellipse at 50% 15%,
+        rgba(212,175,55,.11), transparent 45%),
+        radial-gradient(ellipse at 0% 80%,
+        rgba(212,175,55,.05), transparent 40%),
+        #050505;
+    color: white;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* الإطار الذهبي */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 9px;
+    border: 1px solid rgba(212,175,55,.72);
+    box-shadow:
+        inset 0 0 22px rgba(212,175,55,.05),
+        0 0 15px rgba(212,175,55,.08);
+    pointer-events: none;
+    z-index: 5;
+}
+
+body::after {
+    content: "✦";
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--light-gold);
+    font-size: 17px;
+    text-shadow: 0 0 15px var(--gold);
+    pointer-events: none;
+    z-index: 6;
+}
+
+/* طبقة النجوم */
+#stars {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    display: block;
+    color: #ffdf80;
+    animation: twinkle var(--duration, 3s) ease-in-out infinite alternate;
+    animation-delay: var(--delay, 0s);
+    opacity: .35;
+    text-shadow: 0 0 8px rgba(255,213,90,.9);
+    will-change: opacity, transform;
+}
+
+.star.dot {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #ffe6a0;
+    box-shadow: 0 0 6px #e6bc48;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: .12;
+        transform: scale(.65) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.25) rotate(35deg);
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 430px;
+    text-align: center;
+    animation: enter .9s ease both;
+}
+
+@keyframes enter {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.top-decoration {
+    color: var(--gold);
+    font-size: 17px;
+    letter-spacing: 8px;
+    margin-bottom: 17px;
+    text-shadow: 0 0 12px rgba(212,175,55,.7);
+}
+
+.profile-frame {
+    width: 166px;
+    height: 166px;
+    margin: 0 auto 20px;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #fff0a4,
+        #8e6813,
+        #ffe9a0,
+        #72500b,
+        #d4af37
+    );
+    box-shadow:
+        0 0 12px rgba(212,175,55,.65),
+        0 0 35px rgba(212,175,55,.2);
+    animation: goldGlow 3s ease-in-out infinite alternate;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #080808;
+    background: #111;
+}
+
+@keyframes goldGlow {
+    from {
+        box-shadow: 0 0 12px rgba(212,175,55,.35);
+    }
+    to {
+        box-shadow:
+            0 0 23px rgba(212,175,55,.7),
+            0 0 40px rgba(212,175,55,.2);
+    }
+}
+
+h1 {
+    direction: ltr;
+    color: var(--gold);
+    font-size: clamp(43px, 12vw, 57px);
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1.25;
+    text-shadow:
+        0 0 10px rgba(212,175,55,.55),
+        0 0 25px rgba(212,175,55,.18);
+}
+
+.subtitle {
+    direction: ltr;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #c9b36f;
+    margin-top: 7px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    max-width: 280px;
+    margin: 22px auto 16px;
+    color: var(--gold);
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.divider::after {
+    transform: rotate(180deg);
+}
+
+.description {
+    color: #b8a979;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+/* الأزرار */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.link-button {
+    min-height: 68px;
+    width: 100%;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    text-decoration: none;
+    color: #f8e7b0;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(212,175,55,.7);
+    border-radius: 12px;
+
+    box-shadow: 0 4px 16px rgba(0,0,0,.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    transition:
+        transform .23s ease,
+        border-color .23s ease,
+        box-shadow .23s ease,
+        background .23s ease;
+}
+
+/* انعكاس ذهبي متحرك */
+.link-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 65%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    transform: skewX(-22deg);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,225,140,.16),
+        transparent
+    );
+    transition: left .6s ease;
+}
+
+.link-button:hover::before,
+.link-button:focus-visible::before {
+    left: 150%;
+}
+
+.link-button:hover,
+.link-button:focus-visible {
+    transform: translateY(-3px) scale(1.018);
+    background: rgba(212,175,55,.075);
+    border-color: var(--light-gold);
+    box-shadow:
+        0 0 13px rgba(212,175,55,.25),
+        0 0 24px rgba(212,175,55,.08);
+    outline: none;
+}
+
+.link-button:active {
+    transform: scale(.96);
+    background: rgba(212,175,55,.14);
+    box-shadow: 0 0 17px rgba(212,175,55,.3);
+}
+
+.platform {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: right;
+}
+
+.platform-icon {
+    width: 41px;
+    height: 41px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    background: rgba(212,175,55,.055);
+    border: 1px solid rgba(212,175,55,.5);
+    border-radius: 10px;
+}
+
+.platform-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.platform-name {
+    color: #f7e5ad;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.platform-sub {
+    display: block;
+    direction: ltr;
+    text-align: right;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: .5px;
+    color: #a9955c;
+    margin-top: 3px;
+}
+
+.arrow {
+    direction: ltr;
+    color: var(--gold);
+    font-size: 22px;
+    flex-shrink: 0;
+    transition: transform .25s ease;
+}
+
+.link-button:hover .arrow {
+    transform: translateX(-4px);
+}
+
+.footer {
+    margin-top: 27px;
+    padding-bottom: 5px;
+    color: #95804a;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.footer-line {
+    width: 90px;
+    height: 1px;
+    margin: 13px auto;
+    background: linear-gradient(
+        90deg, transparent, var(--gold), transparent
+    );
+}
+
+.footer strong {
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.footer-arabic {
+    margin-top: 12px;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    letter-spacing: 1px;
+    font-size: 11px;
+    color: #c2a85b;
+}
+
+@media (max-width: 360px) {
+    body { padding: 25px 13px; }
+    .profile-frame { width: 145px; height: 145px; }
+    .link-button { min-height: 62px; padding: 10px 12px; }
+    .platform-icon { width: 37px; height: 37px; }
+    .platform-name { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- النجوم المتحركة -->
+<div id="stars" aria-hidden="true"></div>
+
+<main class="container">
+
+    <div class="top-decoration">✦ ── ✧ ── ✦</div>
+
+    <!-- صورتك -->
+    <div class="profile-frame">
+        <img
+            src="https://cdn.phototourl.com/member/2026-10-22-baffd2e1-6789-4dc7-ae7a-a61470b9fa1f.jpg"
+            alt="JOOD Profile"
+            onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23050505%22/%3E%3Ctext x=%22100%22 y=%22115%22 fill=%22%23d4af37%22 font-size=%2240%22 text-anchor=%22middle%22%3EJOOD%3C/text%3E%3C/svg%3E';"
+        >
+    </div>
+
+    <h1>𝑱𝑶𝑶𝑫</h1>
+    <p class="subtitle">OFFICIAL SOCIAL LINKS</p>
+
+    <div class="divider">✧</div>
+
+    <p class="description">كل روابطنا بمكان واحد ♛</p>
+
+    <nav class="links" aria-label="روابط جود">
+
+        <!-- YouTube -->
+        <a class="link-button"
+           href="https://youtube.com/@jods9?si=C5_3Wjfet3x01wsY"
+           target="_blank" rel="noopener noreferrer">
+            <div class="platform">
+                <div class="platform-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="platform-name">YouTube</div>
+                    <span class="platform-sub">@jods9</span>
+                </div>
+            </div>
+            <span class="arrow">↗</span>
+        </a>
+
+        <!-- Telegram -->
+        <a class="link-button"
+           href="https://t.me/jods6"
+           target="_blank" rel="noopener noreferrer">
+            <div class="platform">
+                <div class="platform-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21.9 4.2 18.6 20c-.2 1.1-.8 1.4-1.7.9l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.8 8.8-7.9c.4-.4-.1-.6-.6-.2L6.6 14.1 2 12.7c-1-.3-1-1 .2-1.5L20.3 4.1c.8-.3 1.9.2 1.6.1Z"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="platform-name">Telegram</div>
+                    <span class="platform-sub">@jods6</span>
+                </div>
+            </div>
+            <span class="arrow">↗</span>
+        </a>
+
+        <!-- Instagram -->
+        <a class="link-button"
+           href="https://www.instagram.com/jods_6?obrf=MWR6emF0eTNsc2hkdQ=="
+           target="_blank" rel="noopener noreferrer">
+            <div class="platform">
+                <div class="platform-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm5 3.1a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2.2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm5-3.8a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="platform-name">Instagram</div>
+                    <span class="platform-sub">@jods_6</span>
+                </div>
+            </div>
+            <span class="arrow">↗</span>
+        </a>
+
+        <!-- TikTok -->
+        <a class="link-button"
+           href="https://www.tiktok.com/@.sozj?_r=1&_t=ZS-9AkR0UHf5td"
+           target="_blank" rel="noopener noreferrer">
+            <div class="platform">
+                <div class="platform-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19.6 6.1A6.8 6.8 0 0 1 16 4.3V3h-4v13.1a2.8 2.8 0 1 1-2-2.7v-4a6.8 6.8 0 1 0 6 6.7V9.3a10.6 10.6 0 0 0 5 1.3v-4a6.6 6.6 0 0 1-1.4-.5Z"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="platform-name">TikTok</div>
+                    <span class="platform-sub">@.sozj</span>
+                </div>
+            </div>
+            <span class="arrow">↗</span>
+        </a>
+
+        <!-- Discord -->
+        <a class="link-button"
+           href="https://discord.gg/49UpAQQ5e"
+           target="_blank" rel="noopener noreferrer">
+            <div class="platform">
+                <div class="platform-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19.7 5.1A19.8 19.8 0 0 0 14.8 3.6l-.6 1.2a18 18 0 0 0-4.4 0l-.6-1.2a19.8 19.8 0 0 0-4.9 1.5C1.2 9.7.4 14.2.8 18.7a19.8 19.8 0 0 0 6 3l1.3-2.1-2-1a12.7 12.7 0 0 0 1.2.6 13.7 13.7 0 0 0 9.4 0 12.7 12.7 0 0 0 1.2-.6l-2 1 1.3 2.1a19.8 19.8 0 0 0 6-3c.5-5.2-.9-9.7-3.5-13.6ZM8.6 15.7c-1.2 0-2.2-1.1-2.2-2.5s1-2.5 2.2-2.5 2.2 1.1 2.2 2.5-1 2.5-2.2 2.5Zm6.8 0c-1.2 0-2.2-1.1-2.2-2.5s1-2.5 2.2-2.5 2.2 1.1 2.2 2.5-1 2.5-2.2 2.5Z"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="platform-name">Discord Server</div>
+                    <span class="platform-sub">JOIN OUR COMMUNITY</span>
+                </div>
+            </div>
+            <span class="arrow">↗</span>
+        </a>
+
+    </nav>
+
+    <footer class="footer">
+        <div class="footer-line"></div>
+        MADE WITH <strong>✦</strong> BY JOOD
+        <div class="footer-line"></div>
+        <div class="footer-arabic">جود دائماً .. ♡</div>
+    </footer>
+
+</main>
+
+<script>
+(function () {
+    const layer = document.getElementById('stars');
+    const total = 65;
+    const symbols = ['✦', '✧', '⋆', '·'];
+
+    for (let i = 0; i < total; i++) {
+        const star = document.createElement('span');
+        const isDot = Math.random() > 0.55;
+
+        star.className = 'star' + (isDot ? ' dot' : '');
+
+        if (!isDot) {
+            star.textContent = symbols[
+                Math.floor(Math.random() * symbols.length)
+            ];
+            star.style.fontSize =
+                (8 + Math.random() * 10) + 'px';
+        }
+
+        star.style.left = (Math.random() * 100) + '%';
+        star.style.top = (Math.random() * 100) + '%';
+        star.style.setProperty(
+            '--duration',
+            (1.5 + Math.random() * 4) + 's'
+        );
+        star.style.setProperty(
+            '--delay',
+            (-Math.random() * 5) + 's'
+        );
+
+        layer.appendChild(star);
+    }
+})();
+</script>
+
+</body>
+</html>
